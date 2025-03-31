@@ -58,7 +58,7 @@ def is_valid_complete(board):
     for start_row in range(0, 9, 3):
         for start_col in range(0, 9, 3):
             block = set(board[start_row + i][start_col + j] for i in range(3) for j in range(3))
-            if len(block - {0}) != len([x for i in range(3) for j in range(3) if board[start_row + i][start_col + j] != 0]):
+            if len(block - {0}) != len([j for i in range(3) for j in range(3) if board[start_row + i][start_col + j] != 0]):
                 return False
     return True
 
